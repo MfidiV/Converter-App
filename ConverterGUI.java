@@ -71,7 +71,13 @@ public class ConverterGUI {
         mainPanel.setLayout(new BorderLayout());
         mainPanel.setBorder(BorderFactory.createEmptyBorder(40, 50, 40, 50));
         mainPanel.setBackground(new Color(255, 255, 255));
-
+    
+        // Unit Label at the Top
+        JLabel unitLabel = new JLabel("UNIT CONVERTER");
+        unitLabel.setFont(new Font("Arial", Font.BOLD, 20));
+        unitLabel.setHorizontalAlignment(JLabel.CENTER);
+        mainPanel.add(unitLabel, BorderLayout.NORTH);
+    
         JPanel roundedPanel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -83,52 +89,53 @@ public class ConverterGUI {
         };
         roundedPanel.setLayout(new GridBagLayout());
         roundedPanel.setBackground(new Color(128, 128, 255));
-
+    
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
-
+    
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.LINE_END;
         roundedPanel.add(new JLabel("From Unit:"), gbc);
-
+    
         gbc.gridx = 1;
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.LINE_START;
         roundedPanel.add(fromUnitComboBox, gbc);
-
+    
         gbc.gridx = 0;
         gbc.gridy = 1;
         roundedPanel.add(new JLabel("To Unit:"), gbc);
-
+    
         gbc.gridx = 1;
         gbc.gridy = 1;
         roundedPanel.add(toUnitComboBox, gbc);
-
+    
         gbc.gridx = 0;
         gbc.gridy = 2;
         roundedPanel.add(new JLabel("Quantity:"), gbc);
-
+    
         gbc.gridx = 1;
         gbc.gridy = 2;
         gbc.gridwidth = 4;
         roundedPanel.add(quantityField, gbc);
-
+    
         gbc.gridx = 0;
         gbc.gridy = 3;
         gbc.gridwidth = 2;
         gbc.anchor = GridBagConstraints.CENTER;
         roundedPanel.add(convertButton, gbc);
-
+    
         gbc.gridx = 0;
         gbc.gridy = 4;
         gbc.gridwidth = 4;
         roundedPanel.add(resultLabel, gbc);
-
+    
         mainPanel.add(roundedPanel, BorderLayout.CENTER);
-
+    
         frame.add(mainPanel);
     }
+    
 
     private void setFrameVisible() {
         frame.setVisible(true);
