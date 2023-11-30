@@ -53,10 +53,21 @@ public class Converter {
         }
     }
 
-    private boolean isConversionSupported(String fromUnit, String toUnit) {
-        String conversionPair = fromUnit.toLowerCase() + "-" + toUnit.toLowerCase();
-        return supportedConversions.contains(conversionPair);
-    }
+  
+private boolean isConversionSupported(String fromUnit, String toUnit) {
+     /**
+ * Checks if conversion is supported between the specified units.
+ *
+ * @param fromUnit The source unit.
+ * @param toUnit   The target unit.
+ * @return True if conversion is supported, false otherwise.
+ */
+    // Create a conversion pair using lowercase units
+    String conversionPair = fromUnit.toLowerCase() + "-" + toUnit.toLowerCase();
+
+    // Check if the conversion pair is present in the list of supported conversions
+    return supportedConversions.contains(conversionPair);
+}
 
     private double convertFeetToMeters(double feet, String toUnit) {
         return toUnit.equalsIgnoreCase("meters") ? feet * 0.3048 : feet;
