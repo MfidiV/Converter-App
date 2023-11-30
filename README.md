@@ -1,4 +1,4 @@
-# Unit Converter GUI
+# Unit Converter App
 
 ## Overview
 
