@@ -57,10 +57,6 @@ public class Converter {
 private boolean isConversionSupported(String fromUnit, String toUnit) {
      /**
  * Checks if conversion is supported between the specified units.
- *
- * @param fromUnit The source unit.
- * @param toUnit   The target unit.
- * @return True if conversion is supported, false otherwise.
  */
     // Create a conversion pair using lowercase units
     String conversionPair = fromUnit.toLowerCase() + "-" + toUnit.toLowerCase();
@@ -86,6 +82,7 @@ private boolean isConversionSupported(String fromUnit, String toUnit) {
     }
 
     private double convertFahrenheitToCelsius(double fahrenheit, String toUnit) {
+        
         return toUnit.equalsIgnoreCase("celsius") ? (fahrenheit - 32) * 5/9 : fahrenheit;
     }
 

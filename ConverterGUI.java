@@ -59,7 +59,7 @@ public class ConverterGUI {
             }
         });
 
-        Font largerFont = new Font("Arial", Font.PLAIN, 14);
+        Font largerFont = new Font("Arial", Font.PLAIN, 18);
         fromUnitComboBox.setFont(largerFont);
         toUnitComboBox.setFont(largerFont);
         quantityField.setFont(largerFont);
@@ -154,6 +154,7 @@ public class ConverterGUI {
 
             double result = converter.performConversion(fromUnit, toUnit, quantity);
             resultLabel.setText("Result: " + result);
+            
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(frame, "Invalid quantity input", "Error", JOptionPane.ERROR_MESSAGE);
         } catch (Exception e) {
