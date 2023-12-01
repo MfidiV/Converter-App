@@ -22,7 +22,7 @@ public class Converter {
     public double performConversion(String fromUnit, String toUnit, double quantity) {
         try {
             if (!isConversionSupported(fromUnit, toUnit)) {
-                JOptionPane.showMessageDialog(null, "Hayb0!!!: " + fromUnit + " to " + toUnit, "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Conversion from " + fromUnit + " to " + toUnit + " not supported", "Error", JOptionPane.ERROR_MESSAGE);
                 return 0.0;
             }
 
